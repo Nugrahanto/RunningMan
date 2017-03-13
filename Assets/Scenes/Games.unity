@@ -536,8 +536,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 4081131059066942, guid: 522abc2787a741142ab3967ce805bc68,
     type: 2}
-  spawnRate: 1
-  randomDelay: 5
+  spawnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -0.00086791045
+      value: 2.0001063
+      inSlope: -0.09556411
+      outSlope: -0.09556411
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.24989298
+      value: 1.9697839
+      inSlope: -0.25012627
+      outSlope: -0.25012627
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.29890138
+      value: 1.3963108
+      inSlope: -0.5120039
+      outSlope: -0.5120039
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.35436356
+      value: 1.8933412
+      inSlope: -0.41544437
+      outSlope: -0.41544437
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5017725
+      value: 1.1940731
+      inSlope: -0.6842613
+      outSlope: -0.6842613
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5041423
+      value: 1.8005672
+      inSlope: -0.58054924
+      outSlope: -0.58054924
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6517767
+      value: 1.0967277
+      inSlope: -1.6111135
+      outSlope: -1.6111135
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6529584
+      value: 1.6493355
+      inSlope: -0.9697676
+      outSlope: -0.9697676
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.74863267
+      value: 1.2119826
+      inSlope: -1.7821789
+      outSlope: -1.7821789
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.75094384
+      value: 1.5878882
+      inSlope: -2.0480156
+      outSlope: -2.0480156
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.85268486
+      value: 1.2982483
+      inSlope: 1.0424852
+      outSlope: 1.0424852
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.8795288
+      value: 1.6984727
+      inSlope: 4.532337
+      outSlope: 4.532337
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1.0030117
+      value: 1.994709
+      inSlope: 2.3990068
+      outSlope: 2.3990068
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  curveLengthInSeconds: 30
+  jitter: 0.25
 --- !u!4 &448379652
 Transform:
   m_ObjectHideFlags: 0

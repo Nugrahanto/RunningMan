@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private Collider2D myCollider;
 	public Text scoreText;
 	private float startTime;
+	private int jumpsLeft = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +28,17 @@ public class PlayerController : MonoBehaviour {
 
 		if (playerHurtTime == -1) {
 
-			if (Input.GetButtonUp ("Jump")) {
-				myRigidBody.AddForce (transform.up * playerJumpForce);
+			if (Input.GetButtonUp ("Jump") && jumpsLeft > 0 ) {
+
+				if (myRigidBody.velocity.y < 0) {
+					myRigidBody.velocity = Vector2.zero;
+				}
+				if (jumpsLeft == 1) {
+					myRigidBody.AddForce (transform.up * playerJumpForce * 0.75f);
+
+				} else {
+					myRigidBody.AddForce (transform.up * playerJumpForce);
+				}
 			}
 
 			myAnim.SetFloat ("vVelocity", myRigidBody.velocity.y);
@@ -57,6 +67,8 @@ public class PlayerController : MonoBehaviour {
 			myRigidBody.velocity = Vector2.zero;
 			myRigidBody.AddForce (transform.up * playerJumpForce);
 			myCollider.enabled = false;
+		} else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
+			jumpsLeft = 2;
 		}
 	}
 }
