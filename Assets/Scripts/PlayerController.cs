@@ -28,19 +28,21 @@ public class PlayerController : MonoBehaviour {
 
 		if (playerHurtTime == -1) {
 
-			if (Input.GetButtonUp ("Jump") && jumpsLeft > 0 ) {
+			if (Input.GetButtonUp ("Jump") && jumpsLeft > 0) {
 
 				if (myRigidBody.velocity.y < 0) {
 					myRigidBody.velocity = Vector2.zero;
 				}
+
 				if (jumpsLeft == 1) {
 					myRigidBody.AddForce (transform.up * playerJumpForce * 0.75f);
-
 				} else {
 					myRigidBody.AddForce (transform.up * playerJumpForce);
 				}
-			}
+			
+				jumpsLeft--;
 
+			}
 			myAnim.SetFloat ("vVelocity", myRigidBody.velocity.y);
 			scoreText.text = (Time.time - startTime).ToString ("0.0");
 		} 
@@ -67,7 +69,8 @@ public class PlayerController : MonoBehaviour {
 			myRigidBody.velocity = Vector2.zero;
 			myRigidBody.AddForce (transform.up * playerJumpForce);
 			myCollider.enabled = false;
-		} else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
+		} 
+		else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
 			jumpsLeft = 2;
 		}
 	}
